@@ -6,3 +6,7 @@
   height: 3.5em;
 }
 
+.input-group .form-control {
+  z-index: 0;
+}
+
