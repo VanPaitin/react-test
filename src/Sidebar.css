@@ -1,12 +1,53 @@
 .logo {
-  height: 80px;
-  width: 50px;
+  height: 15vh;
+  width: 100px;
+}
+
+.sidebar-sections {
+  border-top: 0.5px solid;
+  border-color: #d3d3d3;
 }
 
 .sidebar-sections li {
   text-align: left;
+  list-style: none;
+  padding-top: 0.8em;
+  padding-bottom: 0.8em;
+}
+
+.small-detail {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.sidebar-sections ul {
+  padding-left: 1.5em;
+  margin-bottom: 0;
+}
+
+.sidebar-sections h4 {
+  margin-top: 0.5em;
+  margin-bottom: 0;
+}
+
+.sidebar-sections li div {
+  display: inline-block;
 }
 
 .sidebar-container {
-  /* width:  */
+  position: absolute;
+  z-index: 1000;
+  background: #ffffff;
+  color: #808080;
+  height: 100vh;
+  width: 80vw;
+  font-weight: lighter;
+  font-size: 100%;
+}
+
+.li-container {
+  height: 85vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }

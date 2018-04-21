@@ -1,6 +1,8 @@
 .search-bar {
-  /* margin: auto; */
-  /* width: 80%;
-  height: 100%; */
+  margin-top: 2em;
+}
+
+.form-control {
+  height: 3.5em;
 }
 

@@ -8,7 +8,7 @@ export default class SearchBar extends Component {
     return (
       <div className="search-bar">
         <InputGroup>
-          <InputGroup.Addon onClick={this.props.showingSidebar}><Glyphicon glyph="align-justify" /></InputGroup.Addon>
+          <InputGroup.Addon onClick={this.props.showSidebar}><Glyphicon glyph="align-justify" /></InputGroup.Addon>
           <FormControl type="text" placeholder="Search local"/>
           <InputGroup.Addon onClick={this.props.showingCalendar}><Glyphicon glyph="calendar" /></InputGroup.Addon>
         </InputGroup>
@@ -19,6 +19,6 @@ export default class SearchBar extends Component {
 
 SearchBar.propTypes = {
   showingCalendar: PropTypes.func,
-  showingSidebar: PropTypes.func
+  showSidebar: PropTypes.func
 };
 

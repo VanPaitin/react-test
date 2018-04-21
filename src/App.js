@@ -3,6 +3,8 @@ import './App.css';
 import Calendar from './Calendar';
 import SearchBar from './SearchBar';
 import Sidebar from './Sidebar';
+import background from './map-google.jpg';
+import { Collapse, Fade } from 'react-bootstrap';
 
 class App extends Component {
   constructor(props) {
@@ -10,6 +12,8 @@ class App extends Component {
     this.state = { showingSidebar: false, showingCalendar: false };
     this.handleCalendar = this.handleCalendar.bind(this);
     this.handleSidebar = this.handleSidebar.bind(this);
+    this.showSidebar = this.showSidebar.bind(this);
+    this.hideSidebar = this.hideSidebar.bind(this);
   }
 
   handleCalendar() {
@@ -24,12 +28,33 @@ class App extends Component {
     })
   }
 
+  showSidebar(e) {
+    e.stopPropagation();
+    this.setState({showingSidebar: true, showingCalendar: false})
+  }
+
+  hideSidebar() {
+    this.setState({showingSidebar: false})
+  }
+
   render() {
     return (
-      <div className="App">
-        {this.state.showingCalendar && <Calendar />}
-        {this.state.showingSidebar && <Sidebar />}
-        <SearchBar showingCalendar={this.handleCalendar} showingSidebar={this.handleSidebar} />
+      <div style={{backgroundImage: `url(${background})`}}>
+        <Fade in={this.state.showingSidebar}>
+          <div>
+            <Sidebar />
+          </div>
+        </Fade>
+        <div className="calendar-container">
+          <Fade in={this.state.showingCalendar}>
+            <div>
+              <Calendar />
+            </div>
+          </Fade>
+        </div>
+        <div className="container" onClick={this.hideSidebar}>
+          <SearchBar showingCalendar={this.handleCalendar} showSidebar={this.showSidebar} />
+        </div>
       </div>
     );
   }

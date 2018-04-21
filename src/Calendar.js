@@ -3,6 +3,7 @@ import React from 'react';
 import FullCalendar from 'rc-calendar/lib/FullCalendar';
 
 import 'rc-select/assets/index.css';
+import './Calendar.css'
 import Select from 'rc-select';
 
 import zhCN from 'rc-calendar/lib/locale/zh_CN';
@@ -36,9 +37,8 @@ export default class Calendar extends React.Component {
 
   render() {
     return (
-      <div style={{ zIndex: 1000, position: 'relative' }}>
+      <div className="calendar">
         <FullCalendar
-          style={{ margin: 10 }}
           Select={Select}
           fullscreen={false}
           onSelect={onSelect}
