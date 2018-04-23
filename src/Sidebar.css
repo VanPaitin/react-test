@@ -41,6 +41,7 @@
   color: #808080;
   height: 100vh;
   width: 80vw;
+  max-width: 300px;
   font-weight: lighter;
   font-size: 100%;
 }
@@ -49,5 +50,4 @@
   height: 85vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
 }
