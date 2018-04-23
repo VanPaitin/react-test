@@ -2,4 +2,31 @@
   z-index: 1000;
   position: absolute;
   margin-top: 2em;
+  padding-top: 0.5em;
+  background: #ffffff;
+  color: #808080;
+  padding-bottom: 2em;
 }
+
+.calendar h4 {
+  font-weight: lighter;
+}
+
+.calendar .header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.calendar .glyphicon {
+  padding-top: 0.8em;
+}
+
+.rc-calendar {
+  margin-top: 1.5em;
+}
+
+.rc-calendar-full {
+  width: 84vw;
+}
+

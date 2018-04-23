@@ -3,11 +3,11 @@ import './App.css';
 import Calendar from './Calendar';
 import SearchBar from './SearchBar';
 import Sidebar from './Sidebar';
-import { Fade } from 'react-bootstrap';
 
 class App extends Component {
   constructor(props) {
     super(props);
+
     this.state = { showingSidebar: false, showingCalendar: false };
     this.handleCalendar = this.handleCalendar.bind(this);
     this.showSidebar = this.showSidebar.bind(this);
@@ -31,23 +31,15 @@ class App extends Component {
 
   render() {
     let opacity = this.state.showingSidebar ? 'opacity' : ''
+
     return (
       <div className="App">
-        <Fade in={this.state.showingSidebar} timeout={200}>
-          <div>
-            <Sidebar />
-          </div>
-        </Fade>
-        <div className="calendar-container">
-          <Fade in={this.state.showingCalendar} timeout={200}>
-            <div>
-              <Calendar />
-            </div>
-          </Fade>
-        </div>
+        {this.state.showingSidebar && <Sidebar />}
         <div className="container">
+          {this.state.showingCalendar && <Calendar calendarDisplay={this.handleCalendar}/>}
           <SearchBar showingCalendar={this.handleCalendar} showSidebar={this.showSidebar} />
         </div>
+
         <div className={opacity} onClick={this.hideSidebar}></div>
       </div>
     );

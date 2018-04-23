@@ -1,6 +1,7 @@
 import 'rc-calendar/assets/index.css';
 import React from 'react';
 import FullCalendar from 'rc-calendar/lib/FullCalendar';
+import { Glyphicon, Button } from 'react-bootstrap';
 
 import 'rc-select/assets/index.css';
 import './Calendar.css'
@@ -36,8 +37,21 @@ export default class Calendar extends React.Component {
   };
 
   render() {
+    let weekday = new Array(7);
+    weekday[0] =  "Sunday";
+    weekday[1] = "Monday";
+    weekday[2] = "Tuesday";
+    weekday[3] = "Wednesday";
+    weekday[4] = "Thursday";
+    weekday[5] = "Friday";
+    weekday[6] = "Saturday";
     return (
-      <div className="calendar">
+      <div className="calendar container-fluid">
+        <div className="header">
+          <h4>Peek into the future</h4>
+          <Glyphicon glyph="calendar" onClick={this.props.calendarDisplay}/>
+        </div>
+        <Button>Today</Button> <Button>Tomorrow</Button>
         <FullCalendar
           Select={Select}
           fullscreen={false}
